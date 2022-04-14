@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>NewPaperCat</title>
+    <link rel="stylesheet" href="css/cat_Css.css" type="text/css">
+
+    <style>
+        
+                /* reset */
+        * {margin: 0px; padding: 0px;}
+        a {color: #333; text-decoration: none;}
+        li {list-style: none;}
+        table {border-spacing: 0px;}
+        .clearfix::before, .clearfix::after {display: block; content:''; clear:both;}
+
+      
+
+</style>
+
+
+</head>
+<body class="body">
+    <div id='wrapper'>
+      <div class="div_back">
+      </div>
+    <header>
+    
+    <!-- 아이콘화되는 버튼의 영역입니다.-->
+
+
+<div class="div_base">
+        <div class="cube" onclick="location.href='https://papercat.co.kr';">
+            <div class="cube_in0"></div>
+            <div class="cube_in1"></div>
+            <div class="cube_in2"></div>
+            <div class="cube_in3"></div>
+            <div class="cube_in4"></div>
+            <div class="cube_in5"></div>
+            <div class="cube_in6"></div>
+            <div class="cube_in7"></div>
+            <div class="cube_img">
+                <img src="/img/Naver_ico.png"  > 
+                </div>
+        </div>
+    
+
+
+   
+        <div class="cube">
+            <div class="cube_in0"></div>
+            <div class="cube_in1"></div>
+            <div class="cube_in2"></div>
+            <div class="cube_in3"></div>
+            <div class="cube_in4"></div>
+            <div class="cube_in5"></div>
+            <div class="cube_in6"></div>
+            <div class="cube_in7"></div>
+            <div class="cube_in  ">
+                <div class="modal">
+                    <div class="modal_body">
+                        
+                        
+                        <li ><p><a href="cathouse0.html" target="framei"><h2>캣 타 워</h2></a></p></li>
+                        <div style="height: auto; width: 100%; border-top:1px solid #666699;  margin-bottom: 15px; "></div>
+                          
+                        <li><p><a href="cathouse.html" target="framei" style="height: 1000px;"><h2>장 난 감</h2></a></p></li>
+                        <div style="height: auto; width: 100%; border-top:1px solid #666699;  margin-bottom: 15px; "></div>
+
+                        <li><p><a href="cathouse.html" target="framei"><h2>고양이 사료</h2></a></p></li>
+                        <div style="height: auto; width: 100%; border-top:1px solid #666699;  margin-bottom: 15px; "></div>
+
+                        <li><p><a href="cathouse.html" target="framei"><h2>악 세 서 리</h2></a></p></li>
+                        <div style="height: auto; width: 100%; border-top:1px solid #666699;  margin-bottom: 15px; "></div>
+
+                        </div>
+                    </div>
+                    <div class="btn-open-popup"><h1>상 품 목 록</h1></div>
+               
+            </div>
+         </div>
+   
+
+  
+        <div class="cube">
+            <div class="cube_in0"></div>
+            <div class="cube_in1"></div>
+            <div class="cube_in2"></div>
+            <div class="cube_in3"></div>
+            <div class="cube_in4"></div>
+            <div class="cube_in5"></div>
+            <div class="cube_in6"></div>
+            <div class="cube_in7"></div>
+             <div class="cube_in  ">
+
+                    <div><a href="company.html" target="framei"><h1>  회 사 소 개</h1></a></div>
+               
+            </div>
+        
+            
+    </div>
+
+
+    <div class="cube">
+            <div class="cube_in0"></div>
+            <div class="cube_in1"></div>
+            <div class="cube_in2"></div>
+            <div class="cube_in3"></div>
+            <div class="cube_in4"></div>
+            <div class="cube_in5"></div>
+            <div class="cube_in6"></div>
+            <div class="cube_in7"></div>
+            <div class="cube_in "> 
+                <div class=""><h1>회 원 등 록</h1></div>
+               
+            </div>
+        
+            
+    </div>
+
+    <div class="cube">
+            <div class="cube_in0"></div>
+            <div class="cube_in1"></div>
+            <div class="cube_in2"></div>
+            <div class="cube_in3"></div>
+            <div class="cube_in4"></div>
+            <div class="cube_in5"></div>
+            <div class="cube_in6"></div>
+            <div class="cube_in7"></div>
+            <div class="cube_in ">
+                <div class=""><h1>구 매 문 의</h1></div>
+               
+            </div>
+        
+           
+    </div>
+</header>
+
+    <!-- 보라색짝대기 -->    
+<div style="height: auto; width: 100%; border-top:1px solid #666699;  margin-bottom: 15px; ">
+</div>
+
+
+
+    <!--  아이프레임   -->
+
+
+
+    <div class="iframe_in">
+        <iframe  src="cathousmain.html"  name="framei" >
+        </iframe>
+    </div>
+ </div>   
+
+ </div>
+    
+<script>
+    
+      const body = document.querySelector('body');
+      const modal = document.querySelector('.modal');
+      const btnOpenPopup = document.querySelector('.btn-open-popup');
+      const mo_close = document.querySelector('.btn-close-modal');
+
+      btnOpenPopup.addEventListener('click', () => {
+        modal.classList.toggle('show');
+
+        if (modal.classList.contains('show')) {
+          body.style.overflow = 'hidden';
+        }
+      });
+
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.classList.toggle('show');
+
+          if (!modal.classList.contains('show')) {
+            body.style.overflow = 'auto';
+          }
+        }
+      });
+    </script>
+
+</Section>  
+
+</body>
+
+
+<footer>
+  
+     <div class="footer_div">
+         <h2>Company Info</h2>
+         <p>
+             <span>법인명 : 페이퍼캣</span> <span>대표자(성명) : 서주현 </span><br /><span>사업자 등록번호 안내 : 783-41-00XXX</span> 
+             <span>전화 : 010-3699-8443  <br /> <span 팩스 : 010-3699-8443 </span> <span>주소 : 벽산디지털밸리 2차 718호 </span><br />
+             <span>개인정보관리책임자 : 서주현 idseokoon@hanmail.net</a></span><br />
+         </div>  
+       <div class="copyright">
+             <p>Copyright &copy; 2021 <strong>papercat</strong>. All rights reserved.</p>
+     
+             </p>
+         </div>
+  
+         
+ </footer>
+
+</html>

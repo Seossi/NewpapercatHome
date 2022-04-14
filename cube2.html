@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cube</title>
+    
+
+    <style>
+           <link href="./papercat_Css/jquarry.Css" rel="stylesheet" type="text/css" />
+
+                /* reset */
+                * {margin: 0px; padding: 0px;}
+        a {color: #333; text-decoration: none;}
+        li {list-style: none;}
+        table {border-spacing: 0px;}
+        .clearfix::before, .clearfix::after {display: block; content:''; clear:both;}
+
+      
+
+
+
+
+
+
+
+
+     
+                /*   -- 모바일-- */
+
+       @media screen and (max-width: 993px) {
+
+
+    body{
+        width:98%;
+        height: 100%;
+        margin:0 auto;
+        text-align: center;
+
+
+    }
+
+    .header{
+        position: absolute;
+        width: 100%;
+        display: inline-block;
+        min-width:993px;
+        position:static;
+        padding: 0px;
+        border: 0px;
+        margin: 0px;
+        border-spacing: 0px;
+        background-color: rgb(249, 237, 250);
+
+    }
+
+
+
+
+
+
+    .div_base{
+            position:absolute;
+
+            display: flex;
+            height: 150px;
+            width: 767px;
+            border: #666699;
+            padding: 0 0 0 5% ;
+
+        }
+
+
+
+        
+ 
+     h1{
+            position: absolute;
+            display: inline;
+            font-size: 2em;
+            text-align: center;
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+            color: #666699
+     }
+
+        
+
+     /*   --바탕과 아이콘의 부모-- */
+    .div_base_ui{
+        position: sticky;
+        display: inline-block;
+        height: 150px;
+        width: 760px;
+        z-index: 1020;
+       
+        }
+        .cube{
+            float:left;
+            position: static;
+            display: inline-block ;
+            text-align: center;
+            width: 120px;
+            height: 120px;
+            background-color: rgb(255, 255, 255, 0);
+            padding: 1%;
+            font-size: 0px;
+            border: 0px;
+            z-index: 0;
+            
+            }
+     /*  텍스트 영역-- */
+        .cube_in {
+            position:relative;
+            display: flex;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            bottom: 88%; 
+            left: 0%;
+            font-size: medium;
+            align-content: center;
+            align-items: stretch;
+            flex-direction: row;
+
+
+            z-index: 1120;
+
+            } 
+
+        /*   --이미지영역-- */
+        .cube_img {
+            position:relative;
+            display: flex;
+            bottom: 88%; 
+            z-index: 1220;
+            justify-content: center;
+
+            } 
+
+
+
+      /*   --그림자영역-- */
+        .cube_in0 {
+           
+           position:absolute;
+           width: 100px;
+           height: 100px;
+           box-shadow: 20px 20px 30px 2px rgb(126, 126, 126);
+           border-radius: 25px;
+           z-index: -1 ;
+
+           }    
+     /*   -- 큐브 영역-- */
+        .cube_in1 {
+            position:static;
+            display: inline-block; 
+            width: 20px;
+            height: 20px;
+           
+            background-color: white;
+            border-radius: 25px 0 0 0px;
+            z-index: 3;
+            }    
+
+         .cube_in2 {
+            position:static;
+            display: inline-block; 
+            width: 80px;
+            height: 20px;          
+            background-color: white;
+            z-index: 4;
+            }    
+
+        .cube_in3 {
+            position:static;
+            display: inline-block; 
+            width: 20px;
+            height: 20px;       
+            background-color: white;
+            border-radius: 0 25px 0 0px;
+            z-index: 5;
+            }                        
+        .cube_in4 {
+            position:static;
+            display: inline-block; 
+            width: 120px;
+            height: 80px;
+            background-color: white;
+            z-index: 6;
+            }  
+            
+        .cube_in5 {
+            position:static;
+            display: inline-block; 
+            width: 20px;
+            height: 20px;
+            background-color:white;
+            border-radius: 0 0 0 25px;
+            z-index: 7;
+            }
+        .cube_in6 {
+            position:static;
+            display: inline-block; 
+            width: 80px;
+            height: 20px;
+            background-color: white;
+            z-index: 8;
+            }
+        
+        .cube_in7 {
+            position:static;
+            display: inline-block; 
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 0 0 25px 0px;
+            z-index: 9;
+            }
+        
+
+
+
+            <!--본문구역-->
+         section{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+
+         }
+       
+         .modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1090;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                display: none;
+
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+
+      .modal.show {
+                display: block;
+            }
+
+      .modal_body {
+        position: fixed;
+        top: 55%;
+        left: 50%;
+
+        z-index: 1200;
+        width: 400px;
+        height: 500px;
+
+        padding: 40px;
+
+        text-align: center;
+
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+        transform: translateX(-50%) translateY(-50%);
+      }
+
+
+      .iframe_in{
+
+        position:static;
+        text-align: center;
+        width: 100%;
+        height: 245%;
+        margin-top: 155px;
+        overflow-y:  hide;
+        }
+
+ /* ----------footer --*/
+
+
+
+    footer{
+            
+            position : relative;
+            transform : translateY(-100%);
+            width:100%;
+            margin:0
+            bottom : 0;
+        }
+
+        .wrapper{
+            height : auto;
+            min-height: 100%;
+            }
+
+
+
+        .footer_div{
+            color: white;
+            position: relative;
+            padding: 5px 0px 0px 20px;
+            border: 0px;
+            width: 100%;
+            height: 190px;
+
+            background-color: #B0ACD5;
+        }
+    
+        .copyright{
+            position: static;
+            color: white;
+            position: static;
+            padding: 0px 0px 0px 20px;
+            border: 0px;
+            width: 100%;
+            height: 30px;
+            
+            transform : translateY(0%);
+            background-color: #666699;
+        
+
+        }
+
+
+
+
+      
+    }
+
+
+
+
+
+
+
+
+
+
+              /*   -- PC -- */
+       @media screen and (min-width: 768px) {
+
+        * {
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+            font-family: "맑은 고딕";
+            color: #222328;
+        }
+
+        .body{
+            position: absolute;
+            width: 100%;
+            height: 800px;
+            min-width:768px;
+            
+            background-color: rgb(255, 255, 255);
+
+        }
+
+        .iframe_in{
+            position:static
+            width: 768px;
+            height: 100%;
+            margin-top: 350px;
+        }
+
+        h1{
+            position: absolute;
+            display: inline;
+            font-size: 1.3em;
+            margin-block-start: 0.7em;
+            margin-block-end: 0em;
+            margin-inline-start: 19%;
+            margin-inline-end: -48px;
+            font-weight: bold;
+            color: #666699
+         }
+
+        
+
+        /*   --바탕과 아이콘의 부모-- */
+        .div_base_ui{
+            position: absolute;
+            height: 150px;
+            width: 1024px;
+        
+        }
+
+
+
+
+
+        .div_base{
+            position:absolute;
+            height: 150px;
+            width: 1024px;
+        }
+
+
+
+
+
+        
+        .cube{
+            position: relative;
+            display: inline-block ;
+            width: 150px;
+            height: 50px;           
+            background-color: rgb(90, 70, 122);
+            padding: 5px;
+            font-size: 0px;
+            z-index: 0;
+            
+            }
+        /*   --텍스트 영역-- */
+        .cube_in {
+            position: relative; 
+            display: block;
+            width: 148px;
+            height: 48px;
+            bottom: 110%; 
+            text-align: left;
+            font-size: medium;
+            
+
+            } 
+
+    
+
+
+        /*   --이미지영역-- */
+        .cube_img {
+            position:relative;
+            
+            
+            width: 48px;
+            height: 48px;
+            
+            z-index: 100;
+
+            } 
+
+
+
+        /*   --그림자영역-- */
+        .cube_in0 {
+        
+        position:absolute;
+        width: 0px;
+        height: 0px;
+        box-shadow: 20px 20px 30px 2px rgba(126, 126, 126,10);
+        border-radius: 25px;
+        z-index: -1 ;
+
+        }    
+        /*   -- 큐브 영역-- */
+        .cube_in1 {
+            position:static;
+            display: inline-block; 
+            width: 1px;
+            height: 1px;
+        
+            background-color: white;
+            border-radius: 1px 0 0 0px;
+            z-index: 3;
+            }    
+
+        .cube_in2 {
+            position:static;
+            display: inline-block; 
+            width: 148px;
+            height: 1px;          
+            background-color: white;
+            z-index: 4;
+            }    
+
+        .cube_in3 {
+            position:static;
+            display: inline-block; 
+            width: 1px;
+            height: 1px;       
+            background-color: white;
+            border-radius: 0 1px 0 0px;
+            z-index: 5;
+            }                        
+        .cube_in4 {
+            position:static;
+            display: inline-block; 
+            width: 150px;
+            height: 50px;
+            background-color: white;
+            z-index: 6;
+            }  
+            
+        .cube_in5 {
+            position:static;
+            display: inline-block; 
+            width: 1px;
+            height: 1px;
+            background-color:white;
+            border-radius: 0 0 0 1px;
+            z-index: 7;
+            }
+        .cube_in6 {
+            position:static;
+            display: inline-block; 
+            width: 148px;
+            height: 1px;
+            background-color: white;
+            z-index: 8;
+            }
+
+        .cube_in7 {
+            position:static;
+            display: inline-block; 
+            width: 1px;
+            height: 1px;
+            background-color: white;
+            border-radius: 0 0 1px 0px;
+            z-index: 9;
+            }
+
+           
+
+        .modal {
+            position: absolute;
+            top: -50%;
+            left: 30%;
+
+            width: 100%;
+            height: 100%;
+            z-index: 110;
+
+            display: none;
+
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal.show {
+                    display: block;
+                }
+
+        .modal_body {
+            position: relative;
+            top: 450%;
+            left: 20%;
+
+            z-index: 2000;
+            width: 200px;
+            height: 180px;
+
+            padding: 35px;
+
+            text-align: center;
+
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+
+
+        }    
+
+    
+
+                /* -- 드롭다운 메뉴바 -- */
+
+
+
+
+
+
+        /* ----------footer --*/
+
+
+
+    footer{
+        
+        position : relative;
+        transform : translateY(-100%);
+        width:100%;
+        margin:0
+        bottom : 0;
+    
+
+    .wrapper{
+        height : auto;
+        min-height: 100%;
+        }
+
+
+
+    .footer_div{
+        color: white;
+        position: relative;
+        padding: 5px 0px 0px 20px;
+        border: 0px;
+        width: 100%;
+        height: 190px;
+
+        background-color: #B0ACD5;
+    }
+ 
+    .copyright{
+        position: static;
+        color: white;
+        position: static;
+        padding: 0px 0px 0px 20px;
+        border: 0px;
+        width: 100%;
+        height: 30px;
+        
+        transform : translateY(0%);
+        background-color: #666699;
+       
+
+    }
+}
+
+
+
+
+
+
+
+        
+    </style>
+
+
+</head>
+<body class="body">
+    <header>
+    
+    <!-- 아이콘화되는 버튼의 영역입니다.-->
+
+
+<div class="div_base">
+        <div class="cube" onclick="location.href='https://papercat.kr';">
+            <div class="cube_in0"></div>
+            <div class="cube_in1"></div>
+            <div class="cube_in2"></div>
+            <div class="cube_in3"></div>
+            <div class="cube_in4"></div>
+            <div class="cube_in5"></div>
+            <div class="cube_in6"></div>
+            <div class="cube_in7"></div>
+            <div class="cube_img">
+                <img src="/img/Naver_ico.png" width="80%" height="80%"> 
+                </div>
+        </div>
+    
+
+
+   
+        <div class="cube">
+            <div class="cube_in0"></div>
+            <div class="cube_in1"></div>
+            <div class="cube_in2"></div>
+            <div class="cube_in3"></div>
+            <div class="cube_in4"></div>
+            <div class="cube_in5"></div>
+            <div class="cube_in6"></div>
+            <div class="cube_in7"></div>
+            <div class="cube_in  ">
+                <div class="modal">
+                    <div class="modal_body">
+                        
+                        
+                        <li ><p><a href="img/papercat_tower_info_1.jpg" target="framei"><h2>캣 타 워</h2></a></p></li>
+                        <div style="height: auto; width: 100%; border-top:1px solid #666699;  margin-bottom: 15px; "></div>
+                          
+                        <li><p><a href="./img/cattowerimg1.jpg" target="framei"><h2>장 난 감</h2></a></p></li>
+                        <div style="height: auto; width: 100%; border-top:1px solid #666699;  margin-bottom: 15px; "></div>
+
+                        <li><p><a href="./img/cattowerimg1.jpg" target="framei"><h2>고양이 사료</h2></a></p></li>
+                        <div style="height: auto; width: 100%; border-top:1px solid #666699;  margin-bottom: 15px; "></div>
+
+                        <li><p><a href="./img/cattowerimg1.jpg" target="framei"><h2>악 세 서 리</h2></a></p></li>
+                        <div style="height: auto; width: 100%; border-top:1px solid #666699;  margin-bottom: 15px; "></div>
+
+                        </div>
+                    </div>
+                    <div class="btn-open-popup"><h1>상 품 목 록</h1></div>
+               
+            </div>
+         </div>
+   
+
+  
+        <div class="cube">
+            <div class="cube_in0"></div>
+            <div class="cube_in1"></div>
+            <div class="cube_in2"></div>
+            <div class="cube_in3"></div>
+            <div class="cube_in4"></div>
+            <div class="cube_in5"></div>
+            <div class="cube_in6"></div>
+            <div class="cube_in7"></div>
+            <div class="cube_in ">
+                <div class="btn-open-popup"><h1>  회 사 소 개</h1></div>
+               
+            </div>
+        
+            
+    </div>
+
+
+    <div class="cube">
+            <div class="cube_in0"></div>
+            <div class="cube_in1"></div>
+            <div class="cube_in2"></div>
+            <div class="cube_in3"></div>
+            <div class="cube_in4"></div>
+            <div class="cube_in5"></div>
+            <div class="cube_in6"></div>
+            <div class="cube_in7"></div>
+            <div class="cube_in "> 
+                <div class="btn-open-popup"><h1>회 원 등 록</h1></div>
+               
+            </div>
+        
+            
+    </div>
+
+    <div class="cube">
+            <div class="cube_in0"></div>
+            <div class="cube_in1"></div>
+            <div class="cube_in2"></div>
+            <div class="cube_in3"></div>
+            <div class="cube_in4"></div>
+            <div class="cube_in5"></div>
+            <div class="cube_in6"></div>
+            <div class="cube_in7"></div>
+            <div class="cube_in ">
+                <div class="btn-open-popup"><h1>구 매 문 의</h1></div>
+               
+            </div>
+        
+           
+    </div>
+
+
+    </header>
+
+<Section>
+
+
+
+
+
+    <!-- 보라색짝대기 -->    
+<div style="height: auto; width: 100%; border-top:1px solid #666699;  margin-bottom: 15px; "></div>
+
+
+
+
+
+
+
+
+    <!--  아이프레임   -->
+
+
+
+    <div class="iframe_in">
+        <iframe src="img/mo_img2.jpg"  name="framei" width="100%" height="100%"  frameborder="0px" scrolling="no" >
+            
+        </iframe>
+
+    </div>
+
+<!-- 보라색짝대기 -->    
+<div style="height: auto; width: 100%; border-top:1px solid #666699;  margin-bottom: 15px; "></div>
+
+            <!--  이미지 롤링   -->
+
+
+
+
+    <div module="photoslide2_slide_1">
+    {$slide_images}
+    </div>
+
+    <div class="wrap_default">
+
+
+    <div style="height: auto; width: 100%; border-top:1px solid #666699;  margin-top: 30px; margin-bottom:-12px; ">
+        
+    </div>    
+
+
+
+  </div>   
+
+<!-- 보라색짝대기 -->    
+<div style="height: auto; width: 100%; border-top:1px solid #666699;  margin-bottom: 15px; "></div>
+
+
+
+
+    
+    
+<script>
+    
+      const body = document.querySelector('body');
+      const modal = document.querySelector('.modal');
+      const btnOpenPopup = document.querySelector('.btn-open-popup');
+      const mo_close = document.querySelector('.btn-close-modal');
+
+      btnOpenPopup.addEventListener('click', () => {
+        modal.classList.toggle('show');
+
+        if (modal.classList.contains('show')) {
+          body.style.overflow = 'hidden';
+        }
+      });
+
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.classList.toggle('show');
+
+          if (!modal.classList.contains('show')) {
+            body.style.overflow = 'auto';
+          }
+        }
+      });
+
+
+        //Hide modal
+        mo_close.addEventListener('click', () => {
+        modal.classList.toggle('show');
+
+        if (modal.classList.contains('show')) {
+          body.style.overflow = 'hidden';
+        }
+      });
+
+
+ //Hide modal
+window.addEventListener('click', (e) => {
+  e.target === modal ? modal.classList.remove('modal') : false
+})
+
+
+
+ </script>
+
+
+
+
+
+
+
+
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</Section>   
+</body>
+
+
+
+
+
+<footer>
+   <div class="wrapper">
+    <div class="footer_div">
+        <h2>Company Info</h2>
+        <p>
+            <span>법인명 : 페이퍼캣</span> <span>대표자(성명) : 서주현 </span><br /><span>사업자 등록번호 안내 : 783-41-00XXX</span> 
+            <span>전화 : 010-3699-8443  <br /> <span 팩스 : 010-3699-8443 </span> <span>주소 : 벽산디지털밸리 2차 718호 </span><br />
+            <span>개인정보관리책임자 : 서주현 idseokoon@hanmail.net</a></span><br />
+        </div>  
+      <div class="copyright">
+            <p>Copyright &copy; 2021 <strong>papercat</strong>. All rights reserved.</p>
+    
+            </p>
+        </div>
+    </div>
+        
+</footer>
+
+</html>
